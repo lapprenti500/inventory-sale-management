@@ -72,7 +72,7 @@
         <!-- END wrapper -->
 
         <!-- Right Sidebar -->
-        {{-- @include('body.right-sidebar') --}}
+        {{-- @include('body.right_sidebar') --}}
         <!-- /Right-bar -->
 
         <!-- Right bar overlay-->
