@@ -1,5 +1,3 @@
-
-
 <div class="left-side-menu">
 
     <div class="h-100" data-simplebar>
@@ -14,7 +12,7 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href=" {{  url('/dashboard') }}">
+                    <a href=" {{ url('/dashboard') }}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span> Dashboards </span>
                     </a>
@@ -127,17 +125,17 @@
                         </ul>
                     </div>
                 </li>
-                        </ul>
-                    </div>
-                </li>
             </ul>
-
         </div>
-        <!-- End Sidebar -->
-
-        <div class="clearfix"></div>
+        </li>
+        </ul>
 
     </div>
-    <!-- Sidebar -left -->
+    <!-- End Sidebar -->
+
+    <div class="clearfix"></div>
+
+</div>
+<!-- Sidebar -left -->
 
 </div>

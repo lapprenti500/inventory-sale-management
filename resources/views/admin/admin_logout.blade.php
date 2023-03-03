@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Logout </title>
+        <title>Déconnexion </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -58,9 +58,9 @@
                                         </div>
                                     </div>
 
-                                    <h3>See you again !</h3>
+                                    <h3>Au revoir !</h3>
 
-                                    <p class="text-muted"> You are now successfully sign out. </p>
+                                    <p class="text-muted"> Vous êtes maintenant déconnecté avec succès. </p>
                                 </div>
 
                             </div> <!-- end card-body -->
@@ -69,7 +69,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-white-50">Back to <a href="{{ route('login')}}" class="text-white ms-1"><b>Sign In</b></a></p>
+                                <p class="text-white-50">Retour à <a href="{{ route('login')}}" class="text-white ms-1"><b>Se connecter</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -83,7 +83,7 @@
         <!-- end page -->
 
         <footer class="footer footer-alt">
-            <script>document.write(new Date().getFullYear())</script> &copy;  Copyright by <a href="" class="text-white-50">Amdy Dioum & Cheikh Bassirou Syll</a>
+           2023 - <script>document.write(new Date().getFullYear())</script> &copy; by <a href="" class="text-white-50">Amdy Dioum & Cheikh Bassirou Syll</a>
            </footer>
 
            <!-- Vendor js -->

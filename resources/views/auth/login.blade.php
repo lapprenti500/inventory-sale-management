@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Login Page</title>
+        <title>Page de Connexion | Company Name</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -51,16 +51,18 @@
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
 
+                                    {{-- identifiant Email / Nom / N° De Téléphone --}}
                                     <div class="mb-3">
-                                        <label for="login" class="form-label">Email / Nom / N° Dde Téléphone</label>
+                                        <label for="login" class="form-label">Email / Nom / N° De Téléphone</label>
 
-                                        <input class="form-control" type="text" name="login" id="login" required="" placeholder="Enter your email">
+                                        <input class="form-control" type="text" name="login" id="login" required="" placeholder="Entrer votre email">
                                     </div>
 
+                                    {{-- identifiant mot de passe --}}
                                     <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
+                                        <label for="password" class="form-label">Mot de passe</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password"  name="password" class="form-control" placeholder="Enter your password">
+                                            <input type="password" id="password"  name="password" class="form-control" placeholder="Entrer votre mot de passe">
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
@@ -70,12 +72,12 @@
                                     <div class="mb-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                            <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                            <label class="form-check-label" for="checkbox-signin">Se souvenir de moi</label>
                                         </div>
                                     </div>
 
                                     <div class="text-center d-grid">
-                                        <button class="btn btn-primary" type="submit"> Log In </button>
+                                        <button class="btn btn-primary" type="submit"> Se Connecter </button>
                                     </div>
 
                                 </form>
@@ -97,7 +99,7 @@
 
 
         <footer class="footer footer-alt">
-         <script>document.write(new Date().getFullYear())</script> &copy;  Copyright by <a href="" class="text-white-50">Amdy Dioum & Cheikh Bassirou Syll</a>
+            2023 - <script>document.write(new Date().getFullYear())</script> &copy; Company Name by <a href="" class="text-white-50">Amdy Dioum & Cheikh Bassirou Syll</a>
         </footer>
 
         <!-- Vendor js -->
