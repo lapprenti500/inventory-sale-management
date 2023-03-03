@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/admin/logout', [AdminController::class, 'AdminDestroy'])->name('admin.logout');
+
+Route::get('/logout', [AdminController::class, 'AdminLogoutPage'])->name('admin.logout.page');
+
+Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
