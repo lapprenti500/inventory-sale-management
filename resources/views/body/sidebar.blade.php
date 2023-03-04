@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch-employee
 <div class="left-side-menu">
 
     <div class="h-100" data-simplebar>
 
         <!-- User box -->
+<<<<<<< HEAD
         <div class="user-box text-center">
             <img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
                 class="rounded-circle avatar-md">
@@ -41,6 +45,8 @@
             </div>
             <p class="text-muted">Admin Head</p>
         </div>
+=======
+>>>>>>> branch-employee
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -48,6 +54,7 @@
             <ul id="side-menu">
 
                 <li class="menu-title">Navigation</li>
+<<<<<<< HEAD
     
                 <li>
                     <a href="#sidebarDashboards" data-bs-toggle="collapse">
@@ -71,10 +78,19 @@
                             </li>
                         </ul>
                     </div>
+=======
+
+                <li>
+                    <a href=" {{ url('/dashboard') }}">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span> Dashboards </span>
+                    </a>
+>>>>>>> branch-employee
                 </li>
 
                 <li class="menu-title mt-2">Apps</li>
 
+<<<<<<< HEAD
                 <li>
                     <a href="apps-calendar.html">
                         <i class="mdi mdi-calendar"></i>
@@ -88,6 +104,9 @@
                         <span> Chat </span>
                     </a>
                 </li>
+=======
+
+>>>>>>> branch-employee
 
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
@@ -103,6 +122,7 @@
                             <li>
                                 <a href="ecommerce-products.html">Products</a>
                             </li>
+<<<<<<< HEAD
                             <li>
                                 <a href="ecommerce-product-detail.html">Product Detail</a>
                             </li>
@@ -127,6 +147,8 @@
                             <li>
                                 <a href="ecommerce-checkout.html">Checkout</a>
                             </li>
+=======
+>>>>>>> branch-employee
                         </ul>
                     </div>
                 </li>
@@ -145,6 +167,7 @@
                             <li>
                                 <a href="crm-contacts.html">Contacts</a>
                             </li>
+<<<<<<< HEAD
                             <li>
                                 <a href="crm-opportunities.html">Opportunities</a>
                             </li>
@@ -154,6 +177,9 @@
                             <li>
                                 <a href="crm-customers.html">Customers</a>
                             </li>
+=======
+
+>>>>>>> branch-employee
                         </ul>
                     </div>
                 </li>
@@ -182,6 +208,7 @@
                     </div>
                 </li>
 
+<<<<<<< HEAD
                 <li>
                     <a href="apps-social-feed.html">
                         <span class="badge bg-pink float-end">Hot</span>
@@ -282,6 +309,8 @@
                     </a>
                 </li>
 
+=======
+>>>>>>> branch-employee
                 <li class="menu-title mt-2">Custom</li>
 
                 <li>
@@ -298,6 +327,7 @@
                             <li>
                                 <a href="auth-login-2.html">Log In 2</a>
                             </li>
+<<<<<<< HEAD
                             <li>
                                 <a href="auth-register.html">Register</a>
                             </li>
@@ -334,6 +364,9 @@
                             <li>
                                 <a href="auth-confirm-mail-2.html">Confirm Mail 2</a>
                             </li>
+=======
+
+>>>>>>> branch-employee
                         </ul>
                     </div>
                 </li>
@@ -355,6 +388,7 @@
                             <li>
                                 <a href="pages-sitemap.html">Sitemap</a>
                             </li>
+<<<<<<< HEAD
                             <li>
                                 <a href="pages-invoice.html">Invoice</a>
                             </li>
@@ -770,10 +804,14 @@
                                     </ul>
                                 </div>
                             </li>
+=======
+
+>>>>>>> branch-employee
                         </ul>
                     </div>
                 </li>
             </ul>
+<<<<<<< HEAD
 
         </div>
         <!-- End Sidebar -->
@@ -784,3 +822,18 @@
     <!-- Sidebar -left -->
 
 </div>
+=======
+        </div>
+        </li>
+        </ul>
+
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="clearfix"></div>
+
+</div>
+<!-- Sidebar -left -->
+
+</div>
+>>>>>>> branch-employee

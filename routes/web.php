@@ -1,5 +1,9 @@
 <?php
 
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\AdminController;
+>>>>>>> branch-employee
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +33,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+<<<<<<< HEAD
+=======
+
+Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
+
+Route::get('/logout', [AdminController::class, 'adminLogoutPage'])->name('admin.logout.page');
+
+Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+>>>>>>> branch-employee

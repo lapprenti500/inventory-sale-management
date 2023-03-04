@@ -13,7 +13,11 @@
                                 <i class="fe-search"></i>
                             </button>
                         </div>
+<<<<<<< HEAD
                           
+=======
+
+>>>>>>> branch-employee
                     </div>
                 </form>
             </li>
@@ -35,9 +39,15 @@
                 </a>
             </li>
 
+<<<<<<< HEAD
            
 
             
+=======
+
+
+
+>>>>>>> branch-employee
 
             <li class="dropdown notification-list topbar-dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -69,7 +79,11 @@
                             </p>
                         </a>
 
+<<<<<<< HEAD
                        
+=======
+
+>>>>>>> branch-employee
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -116,7 +130,11 @@
                 <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <img src="{{ asset('backend/assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
                     <span class="pro-user-name ms-1">
+<<<<<<< HEAD
                         Geneva <i class="mdi mdi-chevron-down"></i> 
+=======
+                        Geneva <i class="mdi mdi-chevron-down"></i>
+>>>>>>> branch-employee
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -126,7 +144,11 @@
                     </div>
 
                     <!-- item-->
+<<<<<<< HEAD
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
+=======
+                    <a href="{{ route('admin.profile')}}" class="dropdown-item notify-item">
+>>>>>>> branch-employee
                         <i class="fe-user"></i>
                         <span>My Account</span>
                     </a>
@@ -146,7 +168,11 @@
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
+<<<<<<< HEAD
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
+=======
+                    <a href="{{ route('admin.logout')}}" class="dropdown-item notify-item">
+>>>>>>> branch-employee
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
                     </a>
@@ -202,6 +228,7 @@
                     </div>
                 </a>
                 <!-- End mobile menu toggle-->
+<<<<<<< HEAD
             </li>   
 
             
@@ -210,3 +237,13 @@
         <div class="clearfix"></div>
     </div>
 </div>
+=======
+            </li>
+
+
+
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</div>
+>>>>>>> branch-employee

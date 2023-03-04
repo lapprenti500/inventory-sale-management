@@ -10,6 +10,7 @@ $input = filter_input_array(INPUT_POST);
 $mysqli = new mysqli('localhost', 'user', 'password', 'database');
 
 if (mysqli_connect_errno()) {
+<<<<<<< HEAD
   echo json_encode(array('mysqli' => 'Failed to connect to MySQL: ' . mysqli_connect_error()));
   exit;
 }
@@ -20,6 +21,18 @@ if ($input['action'] === 'edit') {
     $mysqli->query("UPDATE users SET deleted=1 WHERE id='" . $input['id'] . "'");
 } else if ($input['action'] === 'restore') {
     $mysqli->query("UPDATE users SET deleted=0 WHERE id='" . $input['id'] . "'");
+=======
+    echo json_encode(['mysqli' => 'Failed to connect to MySQL: '.mysqli_connect_error()]);
+    exit;
+}
+
+if ($input['action'] === 'edit') {
+    $mysqli->query("UPDATE users SET username='".$input['username']."', email='".$input['email']."', avatar='".$input['avatar']."' WHERE id='".$input['id']."'");
+} elseif ($input['action'] === 'delete') {
+    $mysqli->query("UPDATE users SET deleted=1 WHERE id='".$input['id']."'");
+} elseif ($input['action'] === 'restore') {
+    $mysqli->query("UPDATE users SET deleted=0 WHERE id='".$input['id']."'");
+>>>>>>> branch-employee
 }
 
 mysqli_close($mysqli);

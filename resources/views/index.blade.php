@@ -4,7 +4,11 @@
 
     <!-- Start Content-->
     <div class="container-fluid">
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> branch-employee
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
@@ -28,8 +32,13 @@
                     <h4 class="page-title">Dashboard</h4>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>     
         <!-- end page title --> 
+=======
+        </div>
+        <!-- end page title -->
+>>>>>>> branch-employee
 
         <div class="row">
             <div class="col-md-6 col-xl-3">
@@ -114,6 +123,7 @@
         </div>
         <!-- end row-->
 
+<<<<<<< HEAD
         <div class="row">
             <div class="col-lg-4">
                 <div class="card">
@@ -166,6 +176,9 @@
             </div> <!-- end col-->
 
             <div class="col-lg-8">
+=======
+            <div class="col-lg-12">
+>>>>>>> branch-employee
                 <div class="card">
                     <div class="card-body pb-2">
                         <div class="float-end d-none d-md-inline-block">
@@ -188,6 +201,7 @@
         <!-- end row -->
 
         <div class="row">
+<<<<<<< HEAD
             <div class="col-xl-6">
                 <div class="card">
                     <div class="card-body">
@@ -365,6 +379,10 @@
             </div> <!-- end col -->
 
             <div class="col-xl-6">
+=======
+
+            <div class="col-xl-12">
+>>>>>>> branch-employee
                 <div class="card">
                     <div class="card-body">
                         <div class="dropdown float-end">
@@ -536,9 +554,17 @@
             </div> <!-- end col -->
         </div>
         <!-- end row -->
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> branch-employee
     </div> <!-- container -->
 
 </div> <!-- content -->
 
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> branch-employee
