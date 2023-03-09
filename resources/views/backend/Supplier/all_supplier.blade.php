@@ -12,29 +12,29 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <a href="{{ route('add.supplier') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Supplier </a>
+                                            <a href="{{ route('add.supplier') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter </a>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Supplier</h4>
+
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                         <!-- end page title -->
 
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
+                    <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Tous les fournisseurs</h5>
 
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Sl</th>
                                 <th>Image</th>
-                                <th>Name</th>
+                                <th>Nom</th>
                                 <th>Email</th>
-                                <th>Phone</th>
+                                <th>telephone</th>
                                 <th>Type</th>
                                 <th>Action</th>
                             </tr>

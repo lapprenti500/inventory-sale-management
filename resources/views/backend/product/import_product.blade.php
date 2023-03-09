@@ -13,13 +13,15 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <a href="{{ route('export') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Download Xlsx</a>  
+                                            <a href="{{ route('export') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Download Xlsx</a>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <li class="breadcrumb-item"> <a href="{{ route('all.product') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Retour </a></li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Import Product</h4>
+
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                         <!-- end page title -->
 
 <div class="row">
@@ -45,7 +47,7 @@
 
     <div class="col-md-12">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Xlsx file Import</label>
+            <label for="firstname" class="form-label">Importation de fichiers Xlsx</label>
             <input type="file" name="import_file" class="form-control"   >
 
         </div>
@@ -57,7 +59,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Upload </button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Télécharger </button>
             </div>
         </form>
     </div>

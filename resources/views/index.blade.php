@@ -25,7 +25,7 @@
                             </a>
                         </form>
                     </div>
-                    <h4 class="page-title">Dashboard</h4>
+                    <h4 class="page-title">Tableau de bord</h4>
                 </div>
             </div>
         </div>

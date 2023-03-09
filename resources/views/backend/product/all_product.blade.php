@@ -13,36 +13,36 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
 
-                                            <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Product </a>
+                                            <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter un produit </a>
                                             &nbsp;&nbsp;&nbsp;
-                                            <a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Import  </a>
+                                            <a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Importer  </a>
                                             &nbsp;&nbsp;&nbsp;
-                                            <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Export </a>
+                                            <a href="{{ route('export') }}" class="btn btn-warning rounded-pill waves-effect waves-light">Exporter </a>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">All Product</h4>
+
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                         <!-- end page title -->
 
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
+                    <h5 class="mb-4 text-uppercase">Tous les produits</h5>
 
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Sl</th>
                                 <th>Image</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Supplier</th>
+                                <th>Nom</th>
+                                <th>Categorie</th>
+                                <th>fournisseur</th>
                                 <th>Code</th>
-                                <th>Price</th>
+                                <th>Prix</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

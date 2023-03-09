@@ -14,7 +14,7 @@
                 <li>
                     <a href=" {{ url('/dashboard') }}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span> Dashboards </span>
+                        <span> Tableaux de bord </span>
                     </a>
                 </li>
 
@@ -24,17 +24,18 @@
 
                 <li>
                     <a href="#sidebarEcommerce" data-bs-toggle="collapse">
-                        <i class="mdi mdi-cart-outline"></i>
-                        <span> Employee Manage  </span>
+                       <!-- <i class="mdi mdi-cart-outline"></i>  -->
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span> Employés </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarEcommerce">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.employee') }}">All Employee</a>
+                                <a href="{{ route('all.employee') }}">Tous les employés</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.employee') }}">Add Employee </a>
+                                <a href="{{ route('add.employee') }}">Ajouter un employé </a>
                             </li>
                         </ul>
                     </div>
@@ -43,16 +44,16 @@
                 <li>
                     <a href="#sidebarCrm" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-multiple-outline"></i>
-                        <span> Customer Manage   </span>
+                        <span> Clients   </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarCrm">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.customer') }}">All Customer</a>
+                                <a href="{{ route('all.customer') }}">Tous les clients</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.customer') }}">Add Customer</a>
+                                <a href="{{ route('add.customer') }}">Ajouter un client</a>
                             </li>
 
                         </ul>
@@ -61,17 +62,17 @@
 
                 <li>
                     <a href="#sidebarEmail" data-bs-toggle="collapse">
-                        <i class="mdi mdi-email-multiple-outline"></i>
-                        <span> Supplier Manage </span>
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span> Fournisseurs </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarEmail">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('all.supplier') }}">All Supplier</a>
+                                <a href="{{ route('all.supplier') }}">Tous les fournisseurs</a>
                             </li>
                             <li>
-                                <a href="{{ route('add.supplier') }}">Add Supplier</a>
+                                <a href="{{ route('add.supplier') }}">Ajouter un fournisseur</a>
                             </li>
 
                         </ul>
@@ -81,14 +82,14 @@
 
         <li>
             <a href="#category" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
-                <span> Category </span>
+                <i class="fa fa-thin fa-list"></i>
+                <span> Catégories  </span>
                 <span class="menu-arrow"></span>
             </a>
             <div class="collapse" id="category">
                 <ul class="nav-second-level">
                     <li>
-                        <a href="{{ route('all.category') }}">All Category </a>
+                        <a href="{{ route('all.category') }}">Tous les catégories </a>
                     </li>
 
                 </ul>
@@ -97,21 +98,21 @@
 
         <li>
             <a href="#product" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
-                <span> Products  </span>
+                <i class="fa fa-thin fa-tag"></i>
+                <span> Produits  </span>
                 <span class="menu-arrow"></span>
             </a>
             <div class="collapse" id="product">
                 <ul class="nav-second-level">
                     <li>
-                        <a href="{{ route('all.product') }}">All Product </a>
+                        <a href="{{ route('all.product') }}">Tous les produits </a>
                     </li>
 
                      <li>
-                        <a href="{{ route('add.product') }}">Add Product </a>
+                        <a href="{{ route('add.product') }}">Ajouter un produit</a>
                     </li>
                     <li>
-                        <a href="{{ route('import.product') }}">Import Product </a>
+                        <a href="{{ route('import.product') }}">Importer un produit </a>
                     </li>
                 </ul>
             </div>
@@ -121,8 +122,8 @@
 
                 <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-circle-outline"></i>
-                         <span>Gestion des Frais </span>
+                        <i class="fa fa-thin fa-ticket"></i>
+                         <span>Frais </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarAuth">

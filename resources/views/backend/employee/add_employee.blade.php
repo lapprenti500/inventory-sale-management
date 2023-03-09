@@ -13,14 +13,14 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Add Employee</a></li>
+                                            <li class="breadcrumb-item"> <a href="{{ route('all.employee') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Retour </a></li>
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Employee</h4>
+
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                         <!-- end page title -->
 
 <div class="row">
@@ -40,14 +40,14 @@
         <form method="post" action=  " {{ route('employee.store') }}" enctype="multipart/form-data">
         	@csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Employee</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Ajouter un employé</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Name</label>
+            <label for="firstname" class="form-label">Nom </label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"   >
              @error('name')
       <span class="text-danger"> {{ $message }} </span>
@@ -57,7 +57,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Email</label>
+            <label for="firstname" class="form-label">Email </label>
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"   >
              @error('email')
       <span class="text-danger"> {{ $message }} </span>
@@ -67,7 +67,7 @@
 
               <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Phone    </label>
+            <label for="firstname" class="form-label">Telephone  </label>
             <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"   >
              @error('phone')
       <span class="text-danger"> {{ $message }} </span>
@@ -78,7 +78,7 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Address    </label>
+            <label for="firstname" class="form-label">Adresse </label>
             <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"   >
              @error('address')
       <span class="text-danger"> {{ $message }} </span>
@@ -90,14 +90,14 @@
 
       <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Experience    </label>
+            <label for="firstname" class="form-label">Experience    </label>
             <select name="experience" class="form-select @error('experience') is-invalid @enderror" id="example-select">
-                <option selected disabled >Select Year </option>
-                    <option value="1 Year">1 Year</option>
-                    <option value="2 Year">2 Year</option>
-                    <option value="3 Year">3 Year</option>
-                    <option value="4 Year">4 Year</option>
-                    <option value="5 Year">5 Year</option>
+                <option selected disabled >Choisir l'année </option>
+                    <option value="1 Year">Une année</option>
+                    <option value="2 Year">2 années</option>
+                    <option value="3 Year">3 années</option>
+                    <option value="4 Year">4 années</option>
+                    <option value="5 Year">5 années</option>
                 </select>
                 @error('experience')
                 <span class="text-danger"> {{ $message }} </span>
@@ -108,7 +108,7 @@
 
  <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Salary    </label>
+            <label for="firstname" class="form-label">Salaire    </label>
             <input type="text" name="salary" class="form-control @error('salary') is-invalid @enderror"   >
              @error('salary')
       <span class="text-danger"> {{ $message }} </span>
@@ -118,7 +118,7 @@
 
      <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee Vacation    </label>
+            <label for="firstname" class="form-label">Vacances    </label>
             <input type="text" name="vacation" class="form-control @error('vacation') is-invalid @enderror"   >
              @error('vacation')
       <span class="text-danger"> {{ $message }} </span>
@@ -129,7 +129,7 @@
 
      <div class="col-md-6">
         <div class="mb-3">
-            <label for="firstname" class="form-label">Employee City    </label>
+            <label for="firstname" class="form-label">Ville    </label>
             <input type="text" name="city" class="form-control @error('city') is-invalid @enderror"   >
              @error('city')
       <span class="text-danger"> {{ $message }} </span>
@@ -142,7 +142,7 @@
 
    <div class="col-md-12">
 <div class="mb-3">
-        <label for="example-fileinput" class="form-label">Employee Image</label>
+        <label for="example-fileinput" class="form-label">Image</label>
         <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
         @error('image')
     <span class="text-danger"> {{ $message }} </span>
@@ -166,7 +166,7 @@
 
 
             <div class="text-end">
-                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Enregistrer</button>
             </div>
         </form>
     </div>
