@@ -122,16 +122,22 @@
                 <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
                         <i class="mdi mdi-account-circle-outline"></i>
-                        <span> Auth Pages </span>
+                         <span>Gestion des Frais </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarAuth">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="auth-login.html">Log In</a>
+                                <a href="{{ route('add.expense') }}">Ajouter un Frais</a>
                             </li>
                             <li>
-                                <a href="auth-login-2.html">Log In 2</a>
+                                <a href="{{ route('today.expense') }}">Frais d'aujourd'hui</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('month.expense') }}">Frais du Mois</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('year.expense') }}">Frais de l'année</a>
                             </li>
 
                         </ul>
