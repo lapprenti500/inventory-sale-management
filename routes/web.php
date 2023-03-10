@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ExpenseController;
+use App\Http\Controllers\Backend\PosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +64,7 @@ Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name
 
 Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
 
-}); // End User Middleware 
+}); // End User Middleware
 
 
 /// Employee All Route
@@ -128,7 +129,7 @@ Route::controller(ProductController::class)->group(function(){
 
     });
 
-///Category All Route
+///Expense All Route
 Route::controller(ExpenseController::class)->group(function(){
 
     Route::get('/add/expense','AddExpense')->name('add.expense');
@@ -140,6 +141,14 @@ Route::controller(ExpenseController::class)->group(function(){
     Route::get('/year/expense','YearExpense')->name('year.expense');
 
     });
+
+///Expense All Route
+Route::controller(PosController::class)->group(function(){
+
+    Route::get('/pos','Pos')->name('pos');
+
+
+   });
 
 
     ?>
