@@ -1,5 +1,7 @@
 @extends('admin_dashboard')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <div class="content">
 
         <!-- Start Content-->
@@ -11,11 +13,11 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Profile Administrateur</a></li>
+
 
                             </ol>
                         </div>
-                        <h4 class="page-title">Profile Administrateur</h4>
+                        <h4 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> profil administrateur</h4>
                     </div>
                 </div>
             </div>
@@ -87,6 +89,9 @@
 
                             <!-- end timeline content-->
 
+                            <form method="post" action="{{ route('admin.profile.store') }}" enctype="multipart/form-data">
+                                @csrf
+
                             <div class="tab-pane" id="settings">
                                 <form>
                                     <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Information Personelle
@@ -111,7 +116,7 @@
 
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="lastname" class="form-label">Téléhone</label>
+                                                <label for="lastname" class="form-label">Téléphone</label>
                                                 <input type="text" name="phone" class="form-control" id="lastname"
                                                     value="{{ $adminData->phone }}">
                                             </div>
@@ -121,9 +126,9 @@
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="example-fileinput" class="form-label">Image Profil Administrateur 
+                                                <label for="example-fileinput" class="form-label">Image Profil Administrateur
                                                     </label>
-                                                <input type="file" id="example-fileinput" class="form-control">
+                                                    <input type="file" name="photo" id="image" class="form-control">
                                             </div>
                                         </div> <!-- end col -->
 
@@ -131,8 +136,8 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="example-fileinput" class="form-label"> </label>
-                                                <img src="{{ !empty($adminData->photo) ? url('upload/admin_image/' . $adminData->photo) : url('upload/no_image.jpg') }}"
-                                                    class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                                                <img id="showImage" src="{{ (!empty($adminData->photo)) ? url('upload/admin_image/'.$adminData->photo) : url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
+                                                alt="profile-image">
                                             </div>
                                         </div> <!-- end col -->
 
@@ -161,4 +166,20 @@
         </div> <!-- container -->
 
     </div> <!-- content -->
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('#image').change(function(e){
+                var reader = new FileReader();
+                reader.onload =  function(e){
+                    $('#showImage').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
+
+
+
 @endsection

@@ -55,14 +55,20 @@
                                     <div class="mb-3">
                                         <label for="login" class="form-label">Email / Nom / N° De Téléphone</label>
 
-                                        <input class="form-control" type="text" name="login" id="login" required="" placeholder="Entrer votre email">
+                                        <input class="form-control @error('login') is-invalid @enderror" name="login" type="text" id="login" required="" placeholder="Entrer votre email">
+                         @error('login')
+                       <span class="text-danger"> {{ $message }} </span>
+                        @enderror
                                     </div>
 
                                     {{-- identifiant mot de passe --}}
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Mot de passe</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password"  name="password" class="form-control" placeholder="Entrer votre mot de passe">
+                                            <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Entrer votre mot de passe">
+                                            @error('password')
+                                          <span class="text-danger"> {{ $message }} </span>
+                                          @enderror
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
