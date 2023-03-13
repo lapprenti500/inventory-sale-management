@@ -13,7 +13,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                  < class="breadcrumb-item"> <a href="{{ route('all.customer') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Retour </a></li>
+                                  <a href="{{ route('all.customer') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Retour </a></li>
 
                                         </ol>
                                     </div>
