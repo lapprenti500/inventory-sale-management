@@ -61,7 +61,7 @@ class SupplierController extends Controller
        ]);
 
         $notification = array(
-           'message' => 'Supplier Inserted Successfully',
+           'message' => 'Fournisseur inséré avec succès',
            'alert-type' => 'success'
        );
 
@@ -107,7 +107,7 @@ class SupplierController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Supplier Updated Successfully',
+        'message' => 'Fournisseur mis à jour avec succès',
         'alert-type' => 'success'
     );
 
@@ -133,7 +133,7 @@ class SupplierController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Supplier Updated Successfully',
+        'message' => 'Fournisseur mis à jour avec succès',
         'alert-type' => 'success'
     );
 
@@ -155,7 +155,7 @@ public function DeleteSupplier($id){
     Supplier::findOrFail($id)->delete();
 
     $notification = array(
-        'message' => 'Supplier Deleted Successfully',
+        'message' => 'Fournisseur supprimé avec succès',
         'alert-type' => 'success'
     );
 

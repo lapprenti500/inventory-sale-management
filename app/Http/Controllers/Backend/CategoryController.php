@@ -48,7 +48,7 @@ class CategoryController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Category Updated Successfully',
+            'message' => 'Catégorie  mis à jour avec succès',
             'alert-type' => 'success'
         );
 
@@ -62,7 +62,7 @@ class CategoryController extends Controller
         Category::findOrFail($id)->delete();
 
          $notification = array(
-            'message' => 'Category Deleted Successfully',
+            'message' => 'Catégorie Supprimé avec succès',
             'alert-type' => 'success'
         );
 

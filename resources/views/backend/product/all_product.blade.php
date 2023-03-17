@@ -39,7 +39,7 @@
                                 <th>Sl</th>
                                 <th>Image</th>
                                 <th>Nom</th>
-                                <th>Categorie</th>
+                                <th>Catégorie</th>
                                 <th>fournisseur</th>
                                 <th>Code</th>
                                 <th>Prix</th>

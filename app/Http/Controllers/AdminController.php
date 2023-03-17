@@ -82,7 +82,7 @@ class AdminController extends Controller
         if (!Hash::check($request->old_password, auth::user()->password)) {
 
              $notification = array(
-            'message' => 'Old Password Dones not Match!!',
+            'message' => "L'ancien mot de passe ne correspond pas !!",
             'alert-type' => 'error'
              );
             return back()->with($notification);
@@ -96,11 +96,11 @@ class AdminController extends Controller
         ]);
 
             $notification = array(
-            'message' => 'Password Change Successfully',
+            'message' => 'Changement de mot de passe réussi',
             'alert-type' => 'success'
              );
             return back()->with($notification);
 
-    }// End Method 
+    }// End Method
 
 }

@@ -82,7 +82,9 @@ class PosController extends Controller
         $customer = Customer::where('id',$cust_id)->first();
         return view('backend.invoice.product_invoice',compact('contents','customer'));
 
-   } // End Method 
+   } // End Method
+
+
 
 
 }

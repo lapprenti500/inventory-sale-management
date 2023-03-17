@@ -34,7 +34,7 @@ class EmployeeController extends Controller
         ],
 
         [
-            'name.required' => 'This Employee Name Field Is Required',
+            'name.required' => "Ce champ de nom d'employé est obligatoire",
         ]
 
     );
@@ -60,7 +60,7 @@ class EmployeeController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Employee Inserted Successfully',
+            'message' => 'Employé inséré avec succès',
             'alert-type' => 'success'
         );
 
@@ -101,7 +101,7 @@ class EmployeeController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Employee Updated Successfully',
+            'message' => 'Employé mis à jour avec succès',
             'alert-type' => 'success'
         );
 
@@ -124,7 +124,7 @@ class EmployeeController extends Controller
         ]);
 
          $notification = array(
-            'message' => 'Employee Updated Successfully',
+            'message' => 'Employé mis à jour avec succès',
             'alert-type' => 'success'
         );
 
@@ -143,12 +143,12 @@ class EmployeeController extends Controller
         Employee::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'Employee Deleted Successfully',
+            'message' => 'Employé supprimé avec succès',
             'alert-type' => 'success'
         );
 
         return redirect()->back()->with($notification);
 
-    } // End Method 
+    } // End Method
 
 }

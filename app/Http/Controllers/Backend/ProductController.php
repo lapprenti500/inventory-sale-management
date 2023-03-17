@@ -58,7 +58,7 @@ class ProductController extends Controller
     ]);
 
      $notification = array(
-        'message' => 'Product Inserted Successfully',
+        'message' => 'Produit inséré avec succès',
         'alert-type' => 'success'
     );
 
@@ -104,7 +104,7 @@ public function EditProduct($id){
     ]);
 
      $notification = array(
-        'message' => 'Product Updated Successfully',
+        'message' => 'Produit mis à jour avec succès',
         'alert-type' => 'success'
     );
 
@@ -129,7 +129,7 @@ public function EditProduct($id){
     ]);
 
      $notification = array(
-        'message' => 'Product Updated Successfully',
+        'message' => 'Produit mis à jour avec succès',
         'alert-type' => 'success'
     );
 
@@ -149,7 +149,7 @@ public function DeleteProduct($id){
     Product::findOrFail($id)->delete();
 
     $notification = array(
-        'message' => 'Product Deleted Successfully',
+        'message' => 'Produit supprimé avec succès',
         'alert-type' => 'success'
     );
 
@@ -181,7 +181,7 @@ public function Import(Request $request){
     Excel::import(new ProductImport, $request->file('import_file'));
 
     $notification = array(
-        'message' => 'Product imported Successfully',
+        'message' => 'Produit importé avec succès',
         'alert-type' => 'success'
     );
 

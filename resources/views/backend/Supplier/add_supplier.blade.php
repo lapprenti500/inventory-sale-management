@@ -108,8 +108,8 @@
             <label for="firstname" class="form-label">Type de fournisseur    </label>
            <select name="type" class="form-select @error('type') is-invalid @enderror" id="example-select">
                     <option selected disabled >Choisir le Type </option>
-                    <option value="Distributor">Distributeur </option>
-                    <option value="Whole Seller">Grossiste </option>
+                    <option value="Distributeur">Distributeur </option>
+                    <option value="Grossiste">Grossiste </option>
                 </select>
                  @error('type')
       <span class="text-danger"> {{ $message }} </span>

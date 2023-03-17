@@ -29,7 +29,7 @@ class ExpenseController extends Controller
 
 
             $notification = array(
-            'message' => 'Expense Inserted Successfully',
+            'message' => 'Dépense insérée avec succès',
             'alert-type' => 'success'
         );
 
@@ -69,7 +69,7 @@ class ExpenseController extends Controller
 
 
             $notification = array(
-            'message' => 'Expense Updated Successfully',
+            'message' => 'Frais mise à jour avec succès',
             'alert-type' => 'success'
         );
 

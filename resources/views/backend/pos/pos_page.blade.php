@@ -171,7 +171,7 @@
                             },
                             messages :{
                                 customer_id: {
-                                    required : 'Please Select Customer',
+                                    required : 'Veuillez sélectionner un client',
                                 },
 
                             },

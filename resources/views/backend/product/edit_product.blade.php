@@ -159,7 +159,7 @@
    <div class="col-md-12">
 <div class="form-group mb-3">
         <label for="example-fileinput" class="form-label"> Image</label>
-        <input type="file" name="product_image" id="image" class="form-control">
+        <input type="file" name="product_image" id="image" class="form-control" >
 
     </div>
  </div> <!-- end col -->

@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PosController;
+use App\Http\Controllers\Backend\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -142,7 +143,7 @@ Route::controller(ExpenseController::class)->group(function(){
 
     });
 
-///Expense All Route
+///Pos All Route
 Route::controller(PosController::class)->group(function(){
 
     Route::get('/pos','Pos')->name('pos');
@@ -154,5 +155,16 @@ Route::controller(PosController::class)->group(function(){
 
    });
 
+///Order All Route
+Route::controller(OrderController::class)->group(function(){
 
-    ?>
+    Route::post('/final-invoice','FinalInvoice');
+    Route::get('/pending/order','PendingOrder')->name('pending.order');
+    Route::get('/order/details/{order_id}','OrderDetails')->name('order.details');
+    Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
+    Route::get('/complete/order','CompleteOrder')->name('complete.order');
+    Route::get('/stock','StockManage')->name('stock.manage');
+
+
+
+}); // End User Middleware
