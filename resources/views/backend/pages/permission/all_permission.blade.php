@@ -12,19 +12,13 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-
-   <a href="{{ route('import.product') }}" class="btn btn-info rounded-pill waves-effect waves-light">Importer </a>
-   &nbsp;&nbsp;&nbsp;
-   <a href="{{ route('export') }}" class="btn btn-danger rounded-pill waves-effect waves-light">Exporter </a>
-   &nbsp;&nbsp;&nbsp;
-
-      <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter Produit </a>
+      <a href="{{ route('add.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter une Permission </a>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Tous les produits</h4>
+                                    <h4 class="page-title"></h4>
                                 </div>
                             </div>
-                        </div>
+                        </div><br>
                         <!-- end page title -->
 
     <div class="row">
@@ -32,32 +26,29 @@
             <div class="card">
                 <div class="card-body">
 
-
+                    <h5 class="mb-4 text-uppercase"> Toutes les Permissions</h5>
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Image</th>
-                                <th>Nom</th>
-                                <th>Catégorie</th>
-                                <th>Fournisseur</th>
-                                <th>Code</th>
-                                <th>Stock</th>
+                                <th>Nom de la Permission </th>
+                                <th>Nom du Groupe </th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
 
         <tbody>
-        	@foreach($product as $key=> $item)
+        	@foreach($permissions as $key=> $item)
             <tr>
                 <td>{{ $key+1 }}</td>
-                <td> <img src="{{ asset($item->product_image) }}" style="width:50px; height: 40px;"> </td>
-                <td>{{ $item->product_name }}</td>
-                <td>{{ $item['category']['category_name'] }}</td>
-                <td>{{ $item['supllier']['name'] }}</td>
-                <td>{{ $item->product_code }}</td>
-                <td> <button class="btn btn-warning waves-effect waves-light">{{ $item->product_store }}</button> </td>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->group_name }}</td>
+                <td>
+<a href="{{ route('edit.permission',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"  title="Modifier"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+<a href="{{ route('delete.permission',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete" title="Supprimer"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
+                </td>
             </tr>
             @endforeach
         </tbody>

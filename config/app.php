@@ -199,7 +199,9 @@ return [
         //Shopping Cart
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
-        Barryvdh\DomPDF\ServiceProvider::class
+        Barryvdh\DomPDF\ServiceProvider::class,
+
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 
