@@ -199,6 +199,8 @@ return [
         //Shopping Cart
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
+        Barryvdh\DomPDF\ServiceProvider::class
+
     ],
 
     /*
@@ -217,6 +219,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'PDF' => Barryvdh\DomPDF\Facades\PDF::class,
     ])->toArray(),
 
 ];
