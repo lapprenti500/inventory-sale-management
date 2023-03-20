@@ -8,16 +8,12 @@
                 <form class="app-search">
                     <div class="app-search-box dropdown">
                         <div class="input-group">
-                            <input type="search" class="form-control" placeholder="Search..." id="top-search">
+                            <input type="search" class="form-control" placeholder="Recherche..." id="top-search">
                             <button class="btn input-group-text" type="submit">
                                 <i class="fe-search"></i>
                             </button>
                         </div>
-<<<<<<< HEAD
-                          
-=======
 
->>>>>>> branch-employee
                     </div>
                 </form>
             </li>
@@ -28,7 +24,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
                     <form class="p-3">
-                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                        <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Recipient's username">
                     </form>
                 </div>
             </li>
@@ -39,15 +35,9 @@
                 </a>
             </li>
 
-<<<<<<< HEAD
-           
-
-            
-=======
 
 
 
->>>>>>> branch-employee
 
             <li class="dropdown notification-list topbar-dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -69,53 +59,6 @@
 
                     <div class="noti-scroll" data-simplebar>
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                            <div class="notify-icon">
-                                <img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                            <p class="notify-details">Cristina Pride</p>
-                            <p class="text-muted mb-0 user-msg">
-                                <small>Hi, How are you? What about our next meeting</small>
-                            </p>
-                        </a>
-
-<<<<<<< HEAD
-                       
-=======
-
->>>>>>> branch-employee
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-warning">
-                                <i class="mdi mdi-account-plus"></i>
-                            </div>
-                            <p class="notify-details">New user registered.
-                                <small class="text-muted">5 hours ago</small>
-                            </p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-info">
-                                <i class="mdi mdi-comment-account-outline"></i>
-                            </div>
-                            <p class="notify-details">Caleb Flakelar commented on Admin
-                                <small class="text-muted">4 days ago</small>
-                            </p>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <div class="notify-icon bg-secondary">
-                                <i class="mdi mdi-heart"></i>
-                            </div>
-                            <p class="notify-details">Carlos Crouch liked
-                                <b>Admin</b>
-                                <small class="text-muted">13 days ago</small>
-                            </p>
-                        </a>
-                    </div>
 
                     <!-- All-->
                     <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
@@ -126,55 +69,48 @@
                 </div>
             </li>
 
+            @php
+            $id = Auth::user()->id;
+            $adminData = App\Models\User::find($id);
+           @endphp
+
             <li class="dropdown notification-list topbar-dropdown">
                 <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{ asset('backend/assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
+                    <img src="{{ (!empty($adminData->photo)) ? url('upload/admin_image/'.$adminData->photo) : url('upload/no_image.jpg') }}" alt="user-image" class="rounded-circle">
                     <span class="pro-user-name ms-1">
-<<<<<<< HEAD
-                        Geneva <i class="mdi mdi-chevron-down"></i> 
-=======
-                        Geneva <i class="mdi mdi-chevron-down"></i>
->>>>>>> branch-employee
+                        {{ $adminData->name }} <i class="mdi mdi-chevron-down"></i>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome !</h6>
+                        <h6 class="text-overflow m-0">Bienvenue !</h6>
                     </div>
 
                     <!-- item-->
-<<<<<<< HEAD
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-=======
                     <a href="{{ route('admin.profile')}}" class="dropdown-item notify-item">
->>>>>>> branch-employee
                         <i class="fe-user"></i>
-                        <span>My Account</span>
+                        <span>Mon Compte</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <i class="fe-settings"></i>
-                        <span>Settings</span>
+                        <span>Paramètres</span>
                     </a>
 
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- item-->
+                    <a href="{{ route('change.password') }}" class="dropdown-item notify-item">
                         <i class="fe-lock"></i>
-                        <span>Lock Screen</span>
+                        <span>Change Password </span>
                     </a>
 
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
-<<<<<<< HEAD
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-=======
-                    <a href="{{ route('admin.logout')}}" class="dropdown-item notify-item">
->>>>>>> branch-employee
+                    <a href="{{ route('admin.logout')}}" class="text-danger dropdown-item notify-item">
                         <i class="fe-log-out"></i>
-                        <span>Logout</span>
+                        <span>Deconection</span>
                     </a>
 
                 </div>
@@ -228,16 +164,6 @@
                     </div>
                 </a>
                 <!-- End mobile menu toggle-->
-<<<<<<< HEAD
-            </li>   
-
-            
-            
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-</div>
-=======
             </li>
 
 
@@ -246,4 +172,3 @@
         <div class="clearfix"></div>
     </div>
 </div>
->>>>>>> branch-employee
