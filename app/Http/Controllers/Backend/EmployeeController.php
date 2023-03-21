@@ -10,38 +10,42 @@ use Carbon\Carbon;
 
 class EmployeeController extends Controller
 {
-     public function AllEmployee(){
+    public function AllEmployee()
+    {
 
         $employee = Employee::latest()->get();
-        return view('backend.employee.all_employee',compact('employee'));
+        return view('backend.employee.all_employee', compact('employee'));
     } // End Method
 
-    public function AddEmployee(){
+    public function AddEmployee()
+    {
         return view('backend.employee.add_employee');
     } // End Method
 
-    public function StoreEmployee(Request $request){
+    public function StoreEmployee(Request $request)
+    {
 
-        $validateData = $request->validate([
-            'name' => 'required|max:200',
-            'email' => 'required|unique:employees|max:200',
-            'phone' => 'required|max:200',
-            'image' => 'required',
-        ],
+        $validateData = $request->validate(
+            [
+                'name' => 'required|max:200',
+                'email' => 'required|unique:employees|max:200',
+                'phone' => 'required|max:200',
+                'image' => 'required',
+            ],
 
-        [
-            'name.required' => "Le nom est obligatoire",
-            'email.required' => "L'adresse Email est obligatoire",
-            'phone.required' => "Le numéro de téléphone est obligatoire",
-            'image.required' => "Le nom est obligatoire",
-        ]
+            [
+                'name.required' => "Le nom est obligatoire",
+                'email.required' => "L'adresse Email est obligatoire",
+                'phone.required' => "Le numéro de téléphone est obligatoire",
+                'image.required' => "Le nom est obligatoire",
+            ]
 
-    );
+        );
 
         $image = $request->file('image');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(300,300)->save('upload/employee/'.$name_gen);
-        $save_url = 'upload/employee/'.$name_gen;
+        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        Image::make($image)->resize(300, 300)->save('upload/employee/' . $name_gen);
+        $save_url = 'upload/employee/' . $name_gen;
 
         Employee::insert([
 
@@ -49,14 +53,14 @@ class EmployeeController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
-            
+
             'city' => $request->city,
             'image' => $save_url,
             'created_at' => Carbon::now(),
 
         ]);
 
-         $notification = array(
+        $notification = array(
             'message' => 'Employé inséré avec succès',
             'alert-type' => 'success'
         );
@@ -64,74 +68,70 @@ class EmployeeController extends Controller
         return redirect()->route('all.employee')->with($notification);
     } // End Method
 
-    public function EditEmployee($id){
+    public function EditEmployee($id)
+    {
 
         $employee = Employee::findOrFail($id);
-        return view('backend.employee.edit_employee',compact('employee'));
-
+        return view('backend.employee.edit_employee', compact('employee'));
     } // End Method
 
-    public function UpdateEmployee(Request $request){
+    public function UpdateEmployee(Request $request)
+    {
 
         $employee_id = $request->id;
 
         if ($request->file('image')) {
 
-        $image = $request->file('image');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(300,300)->save('upload/employee/'.$name_gen);
-        $save_url = 'upload/employee/'.$name_gen;
-
-        Employee::findOrFail($employee_id)->update([
-
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'address' => $request->address,
-            'experience' => $request->experience,
-            'salary' => $request->salary,
-            'vacation' => $request->vacation,
-            'city' => $request->city,
-            'image' => $save_url,
-            'created_at' => Carbon::now(),
-
-        ]);
-
-         $notification = array(
-            'message' => 'Employé mis à jour avec succès',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->route('all.employee')->with($notification);
-
-        } else{
+            $image = $request->file('image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save('upload/employee/' . $name_gen);
+            $save_url = 'upload/employee/' . $name_gen;
 
             Employee::findOrFail($employee_id)->update([
 
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'address' => $request->address,
-            'experience' => $request->experience,
-            'salary' => $request->salary,
-            'vacation' => $request->vacation,
-            'city' => $request->city,
-            'created_at' => Carbon::now(),
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'address' => $request->address,
 
-        ]);
+                'city' => $request->city,
+                'image' => $save_url,
+                'created_at' => Carbon::now(),
 
-         $notification = array(
-            'message' => 'Employé mis à jour avec succès',
-            'alert-type' => 'success'
-        );
+            ]);
 
-        return redirect()->route('all.employee')->with($notification);
+            $notification = array(
+                'message' => 'Employé mis à jour avec succès',
+                'alert-type' => 'success'
+            );
 
+            return redirect()->route('all.employee')->with($notification);
+        } else {
+
+            Employee::findOrFail($employee_id)->update([
+
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'address' => $request->address,
+
+                'city' => $request->city,
+                'created_at' => Carbon::now(),
+
+            ]);
+
+            $notification = array(
+                'message' => 'Employé mis à jour avec succès',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.employee')->with($notification);
         } // End else Condition
 
     } // End Method
 
-    public function DeleteEmployee($id){
+    public function DeleteEmployee($id)
+    {
 
         $employee_img = Employee::findOrFail($id);
         $img = $employee_img->image;
@@ -145,7 +145,6 @@ class EmployeeController extends Controller
         );
 
         return redirect()->back()->with($notification);
-
     } // End Method
 
 }

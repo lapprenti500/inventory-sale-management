@@ -5,19 +5,19 @@ $(function(){
 
 
                   Swal.fire({
-                    title: 'Are you sure?',
-                    text: "Delete This Data?",
+                    title: 'Etes vous sur?',
+                    text: "Supprimer cette Données?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Oui, Supprimer!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
+                        'Supprimé!',
+                        'Votre donné a été supprimé.',
                         'success'
                       )
                     }
