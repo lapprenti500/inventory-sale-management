@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.roles') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter un rôle  </a>
+      <a href="{{ route('add.roles.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter un rôle dans l'autorisation </a>
                                         </ol>
                                     </div>
 
@@ -27,12 +27,13 @@
                 <div class="card-body">
 
 
-                    <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                    <table  class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Nom du rôle</th>
-                                <th>Action</th>
+                                <th>Rôle</th>
+                                <th>Autorisation </th>
+                                <th width="18%">Action</th>
                             </tr>
                         </thead>
 
@@ -43,8 +44,14 @@
                 <td>{{ $key+1 }}</td>
                 <td>{{ $item->name }}</td>
                 <td>
-                    <a href="{{ route('edit.roles',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"  title="Modifier"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a href="{{ route('delete.roles',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete" title="Supprimer"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                @foreach($item->permissions as $perm)
+     <span class="badge rounded-pill bg-danger"> {{ $perm->name }} </span>
+                @endforeach
+
+                </td>
+                <td width="18%">
+<a href="{{ route('admin.edit.roles',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"  title="Modifier"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+<a href="{{ route('admin.delete.roles',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete" title="Supprimer"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
                 </td>
             </tr>

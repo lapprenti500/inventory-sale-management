@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter une Permission </a>
+      <a href="{{ route('add.permission') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Ajouter une autorisation </a>
                                         </ol>
                                     </div>
                                     <h4 class="page-title"></h4>
@@ -26,12 +26,12 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h5 class="mb-4 text-uppercase"> Toutes les Permissions</h5>
+                    <h5 class="mb-4 text-uppercase"> Toutes les Autorisations</h5>
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Nom de la Permission </th>
+                                <th>Nom de l'autorisation </th>
                                 <th>Nom du Groupe </th>
                                 <th>Action</th>
                             </tr>

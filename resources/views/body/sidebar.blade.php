@@ -169,17 +169,25 @@
          <li>
             <a href="#permission" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
-                <span> Rôles et Permissions   </span>
+                <span> Rôles et Autorisations   </span>
                 <span class="menu-arrow"></span>
             </a>
             <div class="collapse" id="permission">
                 <ul class="nav-second-level">
                     <li>
-                        <a href="{{ route('all.permission') }}">Permissions </a>
+                        <a href="{{ route('all.permission') }}">Autorisations </a>
                     </li>
 
                     <li>
                         <a href="{{ route('all.roles') }}">Rôles </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('add.roles.permission') }}">Rôle dans les autorisations </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('all.roles.permission') }}">Tous les rôles dans les autorisations</a>
                     </li>
 
                 </ul>

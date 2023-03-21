@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -33,7 +35,7 @@ class RoleController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Permission Added Successfully',
+            'message' => 'Autorisation ajoutée avec succès',
             'alert-type' => 'success'
         );
 
@@ -60,7 +62,7 @@ class RoleController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Permission Updated Successfully',
+            'message' => 'Autorisation mise à jour avec succès',
             'alert-type' => 'success'
         );
 
@@ -74,7 +76,7 @@ class RoleController extends Controller
         Permission::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'Permission Deleted Successfully',
+            'message' => 'Autorisation supprimée avec succès',
             'alert-type' => 'success'
         );
 
@@ -105,7 +107,7 @@ class RoleController extends Controller
        ]);
 
        $notification = array(
-           'message' => 'Role Added Successfully',
+           'message' => 'Rôle ajouté avec succès',
            'alert-type' => 'success'
        );
 
@@ -130,7 +132,7 @@ class RoleController extends Controller
     ]);
 
     $notification = array(
-        'message' => 'Role Updated Successfully',
+        'message' => 'Rôle mis à jour avec succès',
         'alert-type' => 'success'
     );
 
@@ -144,13 +146,98 @@ class RoleController extends Controller
     Role::findOrFail($id)->delete();
 
     $notification = array(
-        'message' => 'Role Deleted Successfully',
+        'message' => 'Rôle supprimé avec succès',
         'alert-type' => 'success'
     );
 
     return redirect()->back()->with($notification);
 
-}// End Method 
+}// End Method
+
+ //////////////// Add Roles Permission All Method ////////////
+
+
+ public function AddRolesPermission(){
+
+    $roles = Role::all();
+    $permissions = Permission::all();
+    $permission_groups = User::getpermissionGroups();
+    return view('backend.pages.roles.add_roles_permission',compact('roles','permissions','permission_groups'));
+
+}// End Method
+
+public function StoreRolesPermission(Request $request){
+
+    $data = array();
+    $permissions = $request->permission;
+
+    foreach($permissions as $key => $item){
+       $data['role_id'] = $request->role_id;
+       $data['permission_id'] = $item;
+
+       DB::table('role_has_permissions')->insert($data);
+
+    }
+
+    $notification = array(
+        'message' => 'Autorisation de rôle ajoutée avec succès',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->route('all.roles.permission')->with($notification);
+
+}// End Method
+
+public function AllRolesPermission(){
+
+    $roles = Role::all();
+    return view('backend.pages.roles.all_roles_permission',compact('roles'));
+
+} // End Method
+
+public function AdminEditRoles($id){
+
+    $role = Role::findOrFail($id);
+    $permissions = Permission::all();
+    $permission_groups = User::getpermissionGroups();
+    return view('backend.pages.roles.edit_roles_permission',compact('role','permissions','permission_groups'));
+
+} // End Method
+
+public function RolePermissionUpdate(Request $request,$id){
+
+    $role = Role::findOrFail($id);
+    $permissions = $request->permission;
+
+    if (!empty($permissions)) {
+        $role->syncPermissions($permissions);
+    }
+
+     $notification = array(
+        'message' => 'Autorisation de rôle mise à jour avec succès',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->route('all.roles.permission')->with($notification);
+
+}// End Method
+
+public function AdminDeleteRoles($id){
+
+    $role = Role::findOrFail($id);
+    if (!is_null($role)) {
+        $role->delete();
+    }
+
+    $notification = array(
+        'message' => 'Autorisation de rôle supprimée avec succès',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
+
+}// End Method
+
 
 
 }
