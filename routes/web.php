@@ -206,3 +206,16 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/admin/delete/roles/{id}','AdminDeleteRoles')->name('admin.delete.roles');
 
    });
+
+///Admin User All Route
+Route::controller(AdminController::class)->group(function(){
+
+    Route::get('/all/admin','AllAdmin')->name('all.admin');
+    Route::get('/add/admin','AddAdmin')->name('add.admin');
+    Route::post('/store/admin','StoreAdmin')->name('admin.store');
+    Route::get('/edit/admin/{id}','EditAdmin')->name('edit.admin');
+    Route::post('/update/admin','UpdateAdmin')->name('admin.update');
+    Route::get('/delete/admin/{id}','DeleteAdmin')->name('delete.admin');
+
+
+   });

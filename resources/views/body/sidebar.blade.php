@@ -21,7 +21,7 @@
                 <li>
                     <a href="{{ route('pos') }}">
                         <span class="badge bg-pink float-end">Hot</span>
-                       <i class="mdi mdi-view-dashboard-outline"></i>
+                        <i class="fa fa-duotone fa-inbox"></i>
                         <span> Point de vente </span>
                     </a>
                 </li>
@@ -71,7 +71,7 @@
 
                 <li>
                     <a href="#sidebarEmail" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-circle me-1"></i>
+                        <i class="fa fa-duotone fa-person"></i>
                         <span> Fournisseurs </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -129,7 +129,7 @@
 
         <li>
             <a href="#orders" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
+                <i class="fa fa-duotone fa-bookmark"></i>
                 <span> Commandes  </span>
                 <span class="menu-arrow"></span>
             </a>
@@ -150,7 +150,7 @@
 
          <li>
             <a href="#stock" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
+                <i class="fa fa-duotone fa-layer-group"></i>
                 <span>Gestion des Stocks   </span>
                 <span class="menu-arrow"></span>
             </a>
@@ -168,7 +168,7 @@
 
          <li>
             <a href="#permission" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
+                <i class="fa fa-solid fa-hand"></i>
                 <span> Rôles et Autorisations   </span>
                 <span class="menu-arrow"></span>
             </a>
@@ -194,6 +194,25 @@
             </div>
         </li>
 
+        <li>
+            <a href="#admin" data-bs-toggle="collapse">
+                <i class="fa fa-duotone fa-gear"></i>
+                <span> Paramètre Admin </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="admin">
+                <ul class="nav-second-level">
+                    <li>
+                        <a href="{{ route('all.admin') }}">Tous les administrateur </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('add.admin') }}">Ajouter administrateur </a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
 
 
 
