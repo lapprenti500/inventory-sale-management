@@ -26,15 +26,14 @@ class EmployeeController extends Controller
             'name' => 'required|max:200',
             'email' => 'required|unique:employees|max:200',
             'phone' => 'required|max:200',
-            'address' => 'required|max:400',
-            'salary' => 'required|max:200',
-            'vacation' => 'required|max:200',
-            'experience' => 'required',
             'image' => 'required',
         ],
 
         [
-            'name.required' => "Ce champ de nom d'employé est obligatoire",
+            'name.required' => "Le nom est obligatoire",
+            'email.required' => "L'adresse Email est obligatoire",
+            'phone.required' => "Le numéro de téléphone est obligatoire",
+            'image.required' => "Le nom est obligatoire",
         ]
 
     );
@@ -50,9 +49,7 @@ class EmployeeController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
-            'experience' => $request->experience,
-            'salary' => $request->salary,
-            'vacation' => $request->vacation,
+            
             'city' => $request->city,
             'image' => $save_url,
             'created_at' => Carbon::now(),
