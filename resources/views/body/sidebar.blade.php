@@ -20,15 +20,14 @@
 
                 <li>
                     <a href="{{ route('pos') }}">
-                        <span class="badge bg-pink float-end">Hot</span>
+                        <span class="badge bg-pink float-end">P</span>
                         <i class="fa fa-duotone fa-inbox"></i>
-                        <span> Point de vente </span>
+                        <span> Caissier </span>
                     </a>
                 </li>
-
+            
 
                 <li class="menu-title mt-2">Apps</li>
-
 
 
                 <li>
@@ -203,7 +202,7 @@
             <div class="collapse" id="admin">
                 <ul class="nav-second-level">
                     <li>
-                        <a href="{{ route('all.admin') }}">Tous les administrateur </a>
+                        <a href="{{ route('all.admin') }}">Tous les administrateurs </a>
                     </li>
 
                     <li>
