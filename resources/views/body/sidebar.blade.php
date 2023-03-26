@@ -25,7 +25,7 @@
                         <span> Caissier </span>
                     </a>
                 </li>
-            
+
 
                 <li class="menu-title mt-2">Apps</li>
 
@@ -242,27 +242,21 @@
                     </div>
                 </li>
 
-                <li>
-                    <a href="#sidebarExpages" data-bs-toggle="collapse">
-                        <i class="mdi mdi-text-box-multiple-outline"></i>
-                        <span> Extra Pages </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarExpages">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="pages-starter.html">Starter</a>
-                            </li>
-                            <li>
-                                <a href="pages-timeline.html">Timeline</a>
-                            </li>
-                            <li>
-                                <a href="pages-sitemap.html">Sitemap</a>
-                            </li>
+                 <li>
+                            <a href="#backup" data-bs-toggle="collapse">
+                                <i class="fa fa-solid fa-file"></i>
+                                <span>Base de données </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="backup">
+    <ul class="nav-second-level">
+        <li>
+            <a href="{{ route('database.backup') }}">Sauvegarde de la base de données</a>
+        </li>
 
-                        </ul>
-                    </div>
-                </li>
+    </ul>
+           </div>
+          </li>
             </ul>
         </div>
         </li>

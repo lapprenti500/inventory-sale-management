@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
 
 
 
@@ -187,6 +191,50 @@ class AdminController extends Controller
         );
 
         return redirect()->back()->with($notification);
+
+    }// End Method
+
+     //////////////// Database Backup Method //////////////////
+
+     public function DatabaseBackup(){
+
+        return view('admin.db_backup')->with('files',File::allfiles(storage_path('/app/Shop')));
+
+    }// End Method
+
+    public function BackupNow(){
+
+        Artisan::call('backup:run');
+
+          $notification = array(
+            'message' => 'Sauvegarde de la base de données réussie',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+
+    }// End Method
+
+
+    public function DownloadDatabase($getFilename){
+
+        $path = storage_path('app\Shop/'.$getFilename);
+        return response()->download($path);
+
+    }// End Method
+
+    public function DeleteDatabase($getFilename){
+
+        Storage::delete('Easy/'.$getFilename);
+
+         $notification = array(
+            'message' => 'Base de données supprimée avec succès',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
 
     }// End Method
 
