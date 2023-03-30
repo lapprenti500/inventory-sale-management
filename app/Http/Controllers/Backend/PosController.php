@@ -14,8 +14,8 @@ class PosController extends Controller
 {
     public function Pos(){
         $product = Product::latest()->get();
-        $customer = Customer::latest()->get();
-        return view('backend.pos.pos_page',compact('product','customer'));
+        
+        return view('backend.pos.pos_page',compact('product'));
 
     } // End Method
 
@@ -78,9 +78,7 @@ class PosController extends Controller
     public function CreateInvoice(Request $request){
 
         $contents = Cart::content();
-        $cust_id = $request->customer_id;
-        $customer = Customer::where('id',$cust_id)->first();
-        return view('backend.invoice.product_invoice',compact('contents','customer'));
+        return view('backend.invoice.product_invoice',compact('contents'));
 
    } // End Method
 
