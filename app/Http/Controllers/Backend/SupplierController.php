@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Supplier;
-use Intervention\Image\Facades\Image;
 use Carbon\Carbon;
 
 class SupplierController extends Controller
@@ -31,16 +30,20 @@ class SupplierController extends Controller
            'phone' => 'required|max:200',
            'address' => 'required|max:400',
            'shopname' => 'required|max:200',
-           'account_holder' => 'required|max:200',
-           'account_number' => 'required',
-           'type' => 'required',
-           'image' => 'required',
-       ]);
+           
+           'type' => 'required',],
 
-       $image = $request->file('image');
-       $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-       Image::make($image)->resize(300,300)->save('upload/supplier/'.$name_gen);
-       $save_url = 'upload/supplier/'.$name_gen;
+           [
+            'name.required' => "Le nom est obligatoire",
+            'email.required' => "L'adresse Email est obligatoire",
+            'phone.required' => "Le numéro de téléphone est obligatoire",
+            'address.required' => "L'adresse est obligatoire",            
+            'shopname.required' => "Le nom de la boutique est obligatoire",
+        ]
+    
+    );
+
+       
 
        Supplier::insert([
 
@@ -50,12 +53,7 @@ class SupplierController extends Controller
            'address' => $request->address,
            'shopname' => $request->shopname,
            'type' => $request->type,
-           'account_holder' => $request->account_holder,
-           'account_number' => $request->account_number,
-           'bank_name' => $request->bank_name,
-           'bank_branch' => $request->bank_branch,
-           'city' => $request->city,
-           'image' => $save_url,
+          
            'created_at' => Carbon::now(),
 
        ]);
@@ -80,40 +78,7 @@ class SupplierController extends Controller
 
     $supplier_id = $request->id;
 
-    if ($request->file('image')) {
-
-    $image = $request->file('image');
-    $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    Image::make($image)->resize(300,300)->save('upload/supplier/'.$name_gen);
-    $save_url = 'upload/supplier/'.$name_gen;
-
-
-    Supplier::findOrFail($supplier_id)->update([
-
-        'name' => $request->name,
-        'email' => $request->email,
-        'phone' => $request->phone,
-        'address' => $request->address,
-        'shopname' => $request->shopname,
-        'type' => $request->type,
-        'account_holder' => $request->account_holder,
-        'account_number' => $request->account_number,
-        'bank_name' => $request->bank_name,
-        'bank_branch' => $request->bank_branch,
-        'city' => $request->city,
-        'image' => $save_url,
-        'created_at' => Carbon::now(),
-
-    ]);
-
-     $notification = array(
-        'message' => 'Fournisseur mis à jour avec succès',
-        'alert-type' => 'success'
-    );
-
-    return redirect()->route('all.supplier')->with($notification);
-
-    } else{
+   
 
         Supplier::findOrFail($supplier_id)->update([
 
@@ -123,11 +88,7 @@ class SupplierController extends Controller
         'address' => $request->address,
         'shopname' => $request->shopname,
         'type' => $request->type,
-        'account_holder' => $request->account_holder,
-        'account_number' => $request->account_number,
-        'bank_name' => $request->bank_name,
-        'bank_branch' => $request->bank_branch,
-        'city' => $request->city,
+        
         'created_at' => Carbon::now(),
 
     ]);
@@ -139,7 +100,7 @@ class SupplierController extends Controller
 
     return redirect()->route('all.supplier')->with($notification);
 
-    } // End else Condition
+ 
 
 
 } // End Method
@@ -148,10 +109,7 @@ class SupplierController extends Controller
 
 public function DeleteSupplier($id){
 
-    $supplier_img = Supplier::findOrFail($id);
-    $img = $supplier_img->image;
-    unlink($img);
-
+   
     Supplier::findOrFail($id)->delete();
 
     $notification = array(
