@@ -95,7 +95,7 @@
 
               <div class="col-md-6">
                 <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Magasin   </label>
+            <label for="firstname" class="form-label">Stock   </label>
             <input type="text" name="product_store" class="form-control "   >
 
            </div>
@@ -198,9 +198,6 @@
                                 supplier_id: {
                                     required : true,
                                 },
-                                product_garage: {
-                                    required : true,
-                                },
                                 product_store: {
                                     required : true,
                                 },
@@ -232,19 +229,8 @@
                 },
                 product_code: {
                     required : 'Veuillez entrer le code du produit',
-                },
-                product_garage: {
-                    required : 'Veuillez entrer le garage du produit',
-                },
-                product_store: {
-                    required : 'Veuillez entrer le magasin du produit',
-                },
-                buying_date: {
-                    required : " Veuillez selectionner la Date d'achat ",
-                },
-                expire_date: {
-                    required : " Veuillez selectionner la Date d'expiration ",
-                },
+                }, 
+               
                 buying_price: {
                     required : " Veuillez entrer le prix d'achat ",
                 },
