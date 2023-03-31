@@ -42,14 +42,14 @@
 
             <input type="hidden" name="id" value="{{ $permission->id }}">
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Modifier une Permission</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Modifier une autorisation</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Nom de la Permission</label>
+            <label for="firstname" class="form-label">Nom de l'autorisation</label>
             <input type="text" name="name" class="form-control" value="{{ $permission->name }}"  >
 
         </div>
@@ -62,16 +62,16 @@
             <select name="group_name" class="form-select" id="example-select">
                     <option selected disabled >Choisir Groupe  </option>
 
-        <option value="pos" {{ $permission->group_name == 'pos' ? 'selected' : '' }}> Point de vente</option>
-        <option value="employee" {{ $permission->group_name == 'employee' ? 'selected' : '' }}> Employée</option>
-        <option value="customer" {{ $permission->group_name == 'customer' ? 'selected' : '' }}> Client</option>
-        <option value="supplier" {{ $permission->group_name == 'supplier' ? 'selected' : '' }}> Fournisseur</option>
-        <option value="category" {{ $permission->group_name == 'category' ? 'selected' : '' }}> Catégorie </option>
-        <option value="product" {{ $permission->group_name == 'product' ? 'selected' : '' }}> Produit </option>
-        <option value="expense" {{ $permission->group_name == 'expense' ? 'selected' : '' }}> Frais </option>
-        <option value="orders" {{ $permission->group_name == 'orders' ? 'selected' : '' }}> Commande</option>
+        <option value="Point de vente" {{ $permission->group_name == 'pos' ? 'selected' : '' }}> Point de vente</option>
+        <option value="Employée" {{ $permission->group_name == 'employee' ? 'selected' : '' }}> Employée</option>
+        <option value="Client" {{ $permission->group_name == 'customer' ? 'selected' : '' }}> Client</option>
+        <option value="Fournisseur" {{ $permission->group_name == 'supplier' ? 'selected' : '' }}> Fournisseur</option>
+        <option value="Catégorie" {{ $permission->group_name == 'category' ? 'selected' : '' }}> Catégorie </option>
+        <option value="Produit" {{ $permission->group_name == 'product' ? 'selected' : '' }}> Produit </option>
+        <option value="Frais" {{ $permission->group_name == 'expense' ? 'selected' : '' }}> Frais </option>
+        <option value="Commande" {{ $permission->group_name == 'orders' ? 'selected' : '' }}> Commande</option>
         <option value="stock" {{ $permission->group_name == 'stock' ? 'selected' : '' }}> Stock </option>
-        <option value="roles" {{ $permission->group_name == 'roles' ? 'selected' : '' }}> Rôles</option>
+        <option value="Rôles" {{ $permission->group_name == 'roles' ? 'selected' : '' }}> Rôles</option>
 
                 </select>
 
@@ -119,7 +119,7 @@
             },
             messages :{
                 name: {
-                    required : 'Veuillez entrer le nom de la permission',
+                    required : "Veuillez entrer le nom de l'utorisation",
                 },
                 group_name: {
                     required : 'Veuillez sélectionner le nom du groupe',

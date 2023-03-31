@@ -40,14 +40,14 @@
         <form id="myForm" method="post" action="{{ route('permission.store') }}" enctype="multipart/form-data">
             @csrf
 
-            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Ajouter une Permission</h5>
+            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Ajouter une Autorisation</h5>
 
             <div class="row">
 
 
     <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="firstname" class="form-label">Nom de la Permission</label>
+            <label for="firstname" class="form-label">Nom de l'autorisation</label>
             <input type="text" name="name" class="form-control"   >
 
         </div>
@@ -60,16 +60,16 @@
             <select name="group_name" class="form-select" id="example-select">
                     <option selected disabled >Choisir Groupe  </option>
 
-        <option value="pos"> Point de vente</option>
-        <option value="employee"> Employée</option>
-        <option value="customer"> Client</option>
-        <option value="supplier"> Fournisseur</option>
-        <option value="category"> Catégorie </option>
-        <option value="product"> Produit </option>
-        <option value="expense"> Frais </option>
-        <option value="orders"> Commande</option>
+        <option value="Point de vente"> Point de vente</option>
+        <option value="Employée"> Employée</option>
+        <option value="Client"> Client</option>
+        <option value="Fournisseur"> Fournisseur</option>
+        <option value="Catégorie"> Catégorie </option>
+        <option value="Produit"> Produit </option>
+        <option value="Frais"> Frais </option>
+        <option value="Commande"> Commande</option>
         <option value="stock"> Stock </option>
-        <option value="roles"> Rôles</option>
+        <option value="Rôles"> Rôles</option>
 
                 </select>
 

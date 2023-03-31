@@ -51,9 +51,12 @@
                                 <td>{{ $item->phone }}</td>
                                 <td>{{ $item->salary }}</td>
                                 <td>
+                                    @if(Auth::user()->can('modifier employée'))
                     <a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"  title="Modifier"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                     @endif
+                                    @if(Auth::user()->can('supprimer employée'))
                     <a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete" title="Supprimer"><i class="fa fa-trash" aria-hidden="true"></i></a></a>
-
+                                     @endif
 
                                 </td>
                             </tr>

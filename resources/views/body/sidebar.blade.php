@@ -20,15 +20,14 @@
 
                 <li>
                     <a href="{{ route('pos') }}">
-                        <span class="badge bg-pink float-end">Hot</span>
-                       <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span> Point de vente </span>
+                        <span class="badge bg-pink float-end">P</span>
+                        <i class="fa fa-duotone fa-inbox"></i>
+                        <span> Caissier </span>
                     </a>
                 </li>
 
 
                 <li class="menu-title mt-2">Apps</li>
-
 
 
                 <li>
@@ -71,7 +70,7 @@
 
                 <li>
                     <a href="#sidebarEmail" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-circle me-1"></i>
+                        <i class="fa fa-duotone fa-person"></i>
                         <span> Fournisseurs </span>
                         <span class="menu-arrow"></span>
                     </a>
@@ -129,7 +128,7 @@
 
         <li>
             <a href="#orders" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
+                <i class="fa fa-duotone fa-bookmark"></i>
                 <span> Commandes  </span>
                 <span class="menu-arrow"></span>
             </a>
@@ -150,7 +149,7 @@
 
          <li>
             <a href="#stock" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
+                <i class="fa fa-duotone fa-layer-group"></i>
                 <span>Gestion des Stocks   </span>
                 <span class="menu-arrow"></span>
             </a>
@@ -168,20 +167,51 @@
 
          <li>
             <a href="#permission" data-bs-toggle="collapse">
-                <i class="mdi mdi-email-multiple-outline"></i>
-                <span> Roles And Permission    </span>
+                <i class="fa fa-solid fa-hand"></i>
+                <span> Rôles et Autorisations   </span>
                 <span class="menu-arrow"></span>
             </a>
             <div class="collapse" id="permission">
                 <ul class="nav-second-level">
                     <li>
-                        <a href="{{ route('all.permission') }}">All Permission </a>
+                        <a href="{{ route('all.permission') }}">Autorisations </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('all.roles') }}">Rôles </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('add.roles.permission') }}">Rôle dans les autorisations </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('all.roles.permission') }}">Tous les rôles dans les autorisations</a>
                     </li>
 
                 </ul>
             </div>
         </li>
 
+        <li>
+            <a href="#admin" data-bs-toggle="collapse">
+                <i class="fa fa-duotone fa-gear"></i>
+                <span> Paramètre Admin </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="admin">
+                <ul class="nav-second-level">
+                    <li>
+                        <a href="{{ route('all.admin') }}">Tous les administrateurs </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('add.admin') }}">Ajouter administrateur </a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
 
 
 
@@ -212,27 +242,21 @@
                     </div>
                 </li>
 
-                <li>
-                    <a href="#sidebarExpages" data-bs-toggle="collapse">
-                        <i class="mdi mdi-text-box-multiple-outline"></i>
-                        <span> Extra Pages </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarExpages">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="pages-starter.html">Starter</a>
-                            </li>
-                            <li>
-                                <a href="pages-timeline.html">Timeline</a>
-                            </li>
-                            <li>
-                                <a href="pages-sitemap.html">Sitemap</a>
-                            </li>
+                 <li>
+                            <a href="#backup" data-bs-toggle="collapse">
+                                <i class="fa fa-solid fa-file"></i>
+                                <span>Base de données </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="backup">
+    <ul class="nav-second-level">
+        <li>
+            <a href="{{ route('database.backup') }}">Sauvegarde de la base de données</a>
+        </li>
 
-                        </ul>
-                    </div>
-                </li>
+    </ul>
+           </div>
+          </li>
             </ul>
         </div>
         </li>
