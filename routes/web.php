@@ -161,9 +161,7 @@ Route::controller(PosController::class)->group(function(){
 Route::controller(OrderController::class)->group(function(){
 
     Route::post('/final-invoice','FinalInvoice');
-    
-    Route::get('/order/details/{order_id}','OrderDetails')->name('order.details');
-    
+        
     Route::get('/complete/order','CompleteOrder')->name('complete.order');
     Route::get('/stock','StockManage')->name('stock.manage');
     Route::get('/order/invoice-download/{order_id}','OrderInvoice');

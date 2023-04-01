@@ -47,6 +47,7 @@ class OrderController extends Controller
 
         } // end foreach
 
+        
 
         $notification = array(
             'message' => 'Commande terminée avec succès',
@@ -93,6 +94,8 @@ class OrderController extends Controller
     }// End Method
 
     public function CompleteOrder(){
+        
+        
 
         $orders = Order::where('order_status','complete')->get();
         return view('backend.order.complete_order',compact('orders'));
