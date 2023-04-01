@@ -60,8 +60,8 @@
             <select name="group_name" class="form-select" id="example-select">
                     <option selected disabled >Choisir Groupe  </option>
 
-        <option value="Point de vente"> Point de vente</option>
-        <option value="Employée"> Employée</option>
+        <option value="Caissiere"> Caissier</option>
+        <option value="Employée"> Employée<option>
         <option value="Client"> Client</option>
         <option value="Fournisseur"> Fournisseur</option>
         <option value="Catégorie"> Catégorie </option>

@@ -1,5 +1,9 @@
 @extends('admin_dashboard')
 @section('admin')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
     <div class="content">
 
         <!-- Start Content-->
@@ -176,7 +180,7 @@
 
 
 
-                    <form class="px-3" method="post" action="{{ url('/final-invoice') }}">
+                    <form id="myForm" class="px-3" method="post" action="{{ url('/final-invoice') }}">
                         @csrf
 
                         <div class="mb-3">
@@ -217,4 +221,42 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
+
+    <script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                 payment_status: {
+                    required : true,
+                },
+                pay: {
+                    required : true,
+                },
+
+            },
+            messages :{
+                 payment_status: {
+                    required : 'Veuillez choisir un mode de payement',
+                },
+                pay: {
+                    required : 'Veuillez entrer le montant',
+                },
+            },
+            errorElement : 'span',
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+
+</script>
 @endsection
