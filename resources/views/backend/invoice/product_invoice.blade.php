@@ -200,7 +200,7 @@
 
                         
                         <input type="hidden" name="order_date" value="{{ date('d-F-Y') }}">
-                        <input type="hidden" name="order_status" value="complete">
+                        <input type="hidden" name="order_status" value="pending">
                         <input type="hidden" name="total_products" value="{{ Cart::count() }}">
                         <input type="hidden" name="sub_total" value="{{ Cart::subtotal() }}">
                         <input type="hidden" name="vat" value="{{ Cart::tax() }}">

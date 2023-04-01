@@ -25,16 +25,16 @@ class OrderController extends Controller
         $data['total_products'] = $request->total_products;
         $data['sub_total'] = $request->sub_total;
         $data['vat'] = $request->vat;
-
+    
         $data['invoice_no'] = 'ESHOP'.mt_rand(10000000,99999999);
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
         $data['created_at'] = Carbon::now();
-
+    
         $order_id = Order::insertGetId($data);
         $contents = Cart::content();
-
+    
         $pdata = array();
         foreach($contents as $content){
             $pdata['order_id'] = $order_id;
@@ -42,22 +42,35 @@ class OrderController extends Controller
             $pdata['quantity'] = $content->qty;
             $pdata['unitcost'] = $content->price;
             $pdata['total'] = $content->total;
-
+    
             $insert = Orderdetails::insert($pdata);
-
+    
         } // end foreach
-
-        
-
-        $notification = array(
-            'message' => 'Commande terminée avec succès',
+    
+        $this->UpdateProductStore($order_id);
+    
+        Order::findOrFail($order_id)->update(['order_status' => 'complete']);
+    
+         $notification = array(
+            'message' => 'Commande effectuée avec succès',
             'alert-type' => 'success'
         );
+    
+        return redirect()->route('pos')->with($notification);
+    
+    }// End Method    
 
-        Cart::destroy();
+    public function UpdateProductStore($order_id) {
 
-        return redirect()->route('dashboard')->with($notification);
-    } // End Method
+        $products = Orderdetails::where('order_id', $order_id)->get();
+    
+        foreach ($products as $item) {
+            Product::where('id',$item->product_id)
+                ->update(['product_store' => DB::raw('product_store-'.$item->quantity) ]);
+        }
+    
+    }
+    
 
     
 
@@ -67,29 +80,6 @@ class OrderController extends Controller
 
         $orderItem = Orderdetails::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
         return view('backend.order.order_details',compact('order','orderItem'));
-
-    }// End Method
-
-
-    public function OrderStatusUpdate(Request $request){
-
-        $order_id = $request->id;
-
-        $product = Orderdetails::where('order_id',$order_id)->get();
-        foreach($product as $item){
-           Product::where('id',$item->product_id)
-                ->update(['product_store' => DB::raw('product_store-'.$item->quantity) ]);
-        }
-
-     Order::findOrFail($order_id)->update(['order_status' => 'complete']);
-
-         $notification = array(
-            'message' => 'Commande effectuée avec succès',
-            'alert-type' => 'success'
-        );
-
-        return redirect()->route('pending.order')->with($notification);
-
 
     }// End Method
 
