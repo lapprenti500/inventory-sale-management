@@ -134,10 +134,7 @@
             </a>
             <div class="collapse" id="orders">
                 <ul class="nav-second-level">
-                    <li>
-                        <a href="{{ route('pending.order') }}">Commandes en attente </a>
-                    </li>
-
+                    
                      <li>
                         <a href="{{ route('complete.order') }}">Commandes complètes </a>
                     </li>

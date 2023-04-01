@@ -1,8 +1,6 @@
 @extends('admin_dashboard')
 @section('admin')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-    <div class="content">
+     <div class="content">
 
         <!-- Start Content-->
         <div class="container-fluid">
@@ -55,7 +53,7 @@
                                                 <td>{{ $cart->price }}</td>
                                                 <td>{{ $cart->price * $cart->qty }}</td>
                                                 <td> <a href="{{ url('/cart-remove/' . $cart->rowId) }}"><i
-                                                            class="fas fa-trash-alt" style="color:#ffffff"></i></a> </td>
+                                                            class="fas fa-trash-alt" style="color:red"></i></a> </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -157,33 +155,5 @@
 
     </div> <!-- content -->
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#myForm').validate({
-                rules: {
-                    customer_id: {
-                        required: true,
-                    },
-
-                },
-                messages: {
-                    customer_id: {
-                        required: 'Veuillez sélectionner un client',
-                    },
-
-                },
-                errorElement: 'span',
-                errorPlacement: function(error, element) {
-                    error.addClass('invalid-feedback');
-                    element.closest('.form-group').append(error);
-                },
-                highlight: function(element, errorClass, validClass) {
-                    $(element).addClass('is-invalid');
-                },
-                unhighlight: function(element, errorClass, validClass) {
-                    $(element).removeClass('is-invalid');
-                },
-            });
-        });
-    </script>
+   
 @endsection
