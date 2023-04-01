@@ -44,12 +44,14 @@ class OrderController extends Controller
             $pdata['total'] = $content->total;
     
             $insert = Orderdetails::insert($pdata);
+
     
         } // end foreach
     
         $this->UpdateProductStore($order_id);
     
         Order::findOrFail($order_id)->update(['order_status' => 'complete']);
+        Cart::destroy();
     
          $notification = array(
             'message' => 'Commande effectuée avec succès',
